@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Agency</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: black;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: transparent;
+            transition: background-color 0.3s;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        nav {
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            background-color: black;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: xx-large;
+            font-weight: extra-bold;
+            transition: color 0.3s;
+            margin-left: 30px;
+            display: inline-block;
+            line-height: 100%;
+            height: 5vh;
+            margin-top: 2.5vh;
+        }
+
+        /* Style for the links */
+        a.contact-link,
+        a.services-link {
+            text-decoration: none;
+            color: #fff;
+            position: relative;
+        }
+
+        a.contact-link::before,
+        a.services-link::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            /* Adjust the height as needed */
+            bottom: -5px;
+            /* Adjust the position as needed */
+            left: 0;
+            background: linear-gradient(135deg, #b380b3, #7a4187, #6c79cc);
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            transform-origin: 0% 0%;
+        }
+
+        a.contact-link:hover::before,
+        a.services-link:hover::before {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+
+        .logo {
+            flex: 1;
+        }
+
+        .logo img {
+            max-width: 200px;
+            cursor: pointer;
+        }
+
+        .section {
+            padding: 30px 0;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: large;
+            font-weight: extra-bold;
+            text-align: center;
+            color: #fff;
+        }
+
+        .service-card {
+            width: 300px;
+            /* height: 160px; */
+            background: linear-gradient(135deg, #b380b3, #7a4187, #6c79cc);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, border-color 0.3s;
+            position: relative;
+            color: #fff;
+        }
+
+        .service-card:before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px solid transparent;
+            border-image: linear-gradient(135deg, #b380b3, #7a4187, #6c79cc);
+            border-image-slice: 1;
+            border-radius: 8px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+            border-color: transparent;
+        }
+
+        .service-card:hover:before {
+            opacity: 1;
+        }
+
+        .section h2.services {
+            font-size: xx-large;
+            transition: transform 0.3s;
+            /* Add purple underline to headings */
+            text-decoration: underline;
+            text-decoration-color: #b380b3;
+            text-underline-offset: 5px;
+            text-align: center; /* Center align */
+            font-weight: bold; /* Make it bold */
+            margin: 0 auto; /* Center horizontally */
+        }
+
+        .section h2.services:hover {
+            text-decoration-color: #7a4187;
+            
+        }
+
+        .service-card h3 {
+            font-size: larger;
+            /* Increase the font size */
+            color: black;
+            /* Change the color to black */
+            font-weight: bold;
+            /* Make it bold */
+        }
+
+        /* Update the style for the <p> tags inside service cards */
+        .service-card p {
+            font-style: italic;
+            /* Remove italic style */
+            text-align: left;
+            /* Align text to the left */
+            margin: 5px 0;
+            /* Add some margin for better spacing */
+        }
+
+        .welcome-container {
+            padding: 20px;
+            display: flex;
+        }
+
+        .typing-animation-container {
+            position: relative;
+            animation: typing 3s steps(40, end);
+        }
+
+        .typing-animation {
+            font-size: 32px;
+            font-style: oblique;
+            color: #fff;
+            text-shadow: 0px 10px 20px #777;
+            overflow: hidden;
+            max-height: 40vh;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .blinker {
+            animation: blinker 0.5s infinite linear;
+            color: #fff;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 60%;
+            }
+        }
+
+        @keyframes blinker {
+
+            from,
+            to {
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 1;
+            }
+        }
+
+        .contact-details {
+            text-align: center;
+            font-weight: extra-bold;
+            font-size: x-large;
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        
+        }
+
+       
+
+        .image-container {
+            text-align: right;
+            padding-right: 20px;
+            margin-top: 100px;
+        }
+
+        /* Add animation effect to the image */
+        .image-container img {
+            max-width: 100%;
+            animation: imageAnimation 5s infinite alternate;
+        }
+
+        .contact-container h2.services {
+                font-size: xx-large; /* Increase the font size */
+                text-align: center; /* Center align */
+                font-weight: bold; /* Make it bold */
+                margin: 0 auto; /* Center horizontally */
+            }
+
+        @keyframes imageAnimation {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.1);
+                /* Adjust the scale factor as needed */
+            }
+        }
+
+        .welcome-text-container {
+            flex: 1;
+        }
+
+        .welcome-text {
+            font-size: 400%;
+            font-weight: extra-bold;
+            color: transparent;
+            background: linear-gradient(135deg, #b380b3, #7a4187, #6c79cc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-align: center;
+        }
+
+        .get-fame {
+            font-weight: bold;
+            font-size: 150%;
+            font-style: italic;
+            /* Add any other styling you need */
+        }
+
+        /* Social Icons */
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 60px;
+            /* Adjust the icon size as needed */
+            margin: 0 10px;
+            /* Adjust spacing between icons as needed */
+        }
+
+        /* Media query for max-width 800px (adjust styles for mobile) */
+        @media (max-width: 800px) {
+            nav {
+                display: flex;
+                background-color: black;
+                align-items: center;
+                max-width: fit-content;
+            }
+
+            nav a {
+                display: flex;
+                text-align: center;
+                padding: 10px;
+                font-size: medium;
+                font-weight: extra-bold;
+                transition: color 0.3s;
+            }
+
+            .logo img {
+                max-width: 150px;
+            }
+            .services-container, .contact-container{
+                flex-direction: column;
+            }
+            .service-card:hover {
+                transform: scale(1.05);
+                border-color: transparent;
+            }
+
+            .service-card:hover:before {
+                opacity: 1;
+            }
+
+            .service-card {
+                width: 80vw;
+                margin-left:10vw;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s, border-color 0.3s;
+            }
+
+            .welcome-container {
+                flex-direction: column-reverse;
+            }
+
+            .welcome-text {
+                font-size: 200%;
+                position: relative;
+                top: auto;
+                right: auto;
+                text-align: center;
+            }
+
+            .get-fame {
+                font-weight: bold;
+                font-size: auto;
+                font-style: italic;
+                /* Add any other styling you need */
+            }
+
+
+
+            .image-container {
+                text-align: center;
+                padding-right: 10%;
+                margin-top: 40px;
+            }
+
+            .image-container img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="logg.png" alt="Logo" onclick="scrollToTop()">
+                </div>
+
+                <a href="#services" class="services-link">Services</a>
+                <a href="#contact" class="contact-link">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="section">
+        <div class="welcome-container">
+            <div class="welcome-text-container">
+                <h1 class="welcome-text">Welcome to <br><span class="get-fame">GET FAME</span> <br>marketing solutions
+                </h1>
+                <div class="typing-animation-container">
+                    <p class="typing-animation">
+                        In a digital race, online presence isn't an option, it's a necessity
+                        <span class="blinker">|</span>
+                    </p>
+                </div>
+
+            </div>
+            <div class="image-container">
+                <img src="p999.png" alt="image1" style="max-width: 100%;">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container services-container">
+            <h2 class="services">Our Services</h2>
+        </div>
+
+    <section id="services" class="section">
+        <div class="container services-container">
+            
+            <div class="services">
+                <div class="service-card">
+                    <h3>PR management </h3>
+                    <p>~ complete social media management<br><br>
+                        ~ paid ads with garunteed results</p>
+                </div>
+                <div class="service-card">
+                    <h3>Content creation/editing </h3>
+                    <p>~ work on engagement of content<br><br>
+                        ~ product/photo shoot</p>
+                </div>
+                <div class="service-card">
+                    <h3>Website devlopment and seo</h3>
+                    <p>~ responsive website with seo optimized<br><br>
+                        ~ seo and traffic</p>
+                </div>
+                <div class="service-card">
+                    <h3>Business growth solutions</h3>
+                    <p>~ brand image development<br><br>
+                        ~ leads/profit generation by online marketing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="contact-container container">
+            <h2 class="services">Contact Us</h2>
+        </div>
+
+        <section id="contact" class="section">
+            <div class="contact-container container">
+               
+        
+                <p class="contact-details"><span class="extra-bold">Email:</span> getfamecompany@gmail.com
+                <br><br>
+                 Mobile:</span> +91-79067-55171</p>
+        
+                
+                
+        
+               
+            </div>
+        </section>
+
+        
+        <section id="contact" class="section">
+           
+        
+                
+                
+        
+                <!-- Center-align social icons -->
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/your-linkedin-profile" target="_blank">
+                        <img src="lin.png" alt="LinkedIn Icon" class="social-icon">
+                    </a>
+                    <a href="https://www.instagram.com/your-instagram-profile" target="_blank">
+                        <img src="ins.png" alt="Instagram Icon" class="social-icon">
+                    </a>
+                </div>
+            
+        </section>
+        
+
+    <script>
+        // JavaScript function to scroll to the top of the page when the logo is clicked
+        function scrollToTop() {
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+
+</html>
